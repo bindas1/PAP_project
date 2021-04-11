@@ -1,9 +1,10 @@
 package org.example;
 
-import java.io.IOException;
 import javafx.fxml.FXML;
 
-public class MainPage {
+import java.io.IOException;
+
+public class ProductsController {
 
     @FXML private void signOut() throws IOException { App.setRoot("primary"); }
 
@@ -11,5 +12,5 @@ public class MainPage {
 
     @FXML private void goToClients() throws IOException { App.setRoot("clients"); }
 
-    @FXML private void goToProducts() throws IOException { App.setRoot("products"); }
+    @FXML private void goToMainPage() throws IOException { App.setRoot("MainPage"); }
 }

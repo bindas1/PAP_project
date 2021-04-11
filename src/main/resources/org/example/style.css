@@ -23,9 +23,20 @@ root {
 .button {
     -fx-font-family: "Arial Narrow";
     -fx-font-weight: bold;
-    -fx-font-size: 16px;
-    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-font-size: 14px;
+    -fx-background-color: #45d4db;
+    -fx-border-color: WHITE;
+    -fx-text-fill: WHITE;
+    -fx-background-radius: 5px;
     -fx-cursor: hand;
+    -fx-border-radius: 5px;
+}
+
+.button:hover {
+    -fx-text-fill: WHITE;
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-border-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-background-radius: 5px;
 }
 
 #homeButton, #ordersButton, #productsButton, #clientsButton {
@@ -33,6 +44,14 @@ root {
     -fx-background-color: WHITE;
     -fx-border-color: linear-gradient(#61a2b1, #2A5058);
     -fx-border-radius: 10px;
+    -fx-font-size: 16px;
+}
+#homeButton:hover, #ordersButton:hover, #productsButton:hover, #clientsButton:hover {
+    -fx-text-fill: WHITE;
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-border-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-font-size: 16px;
+    -fx-background-radius: 10px;
 }
 
 #signedOutButton{
@@ -41,11 +60,6 @@ root {
     -fx-font-size: 10px;
     -fx-background-color: linear-gradient(#d90f23, #ad0919);
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-border-color: BLACK;
 }
 
-#homeButton:hover, #ordersButton:hover, #productsButton:hover, #clientsButton:hover {
-    -fx-text-fill: WHITE;
-    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
-    -fx-border-color: linear-gradient(#61a2b1, #2A5058);
-    -fx-background-radius: 10px;
-}
