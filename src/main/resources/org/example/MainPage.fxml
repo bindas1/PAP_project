@@ -14,18 +14,18 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.MainPage">
          <top>
-            <AnchorPane prefHeight="70.0" prefWidth="640.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="70.0" prefWidth="640.0" minWidth="-Infinity" maxWidth="-Infinity" style="-fx-background-color: WHITE; -fx-border-color: linear-gradient(#61a2b1, #2A5058);" BorderPane.alignment="CENTER">
                <children>
-                  <Pane prefHeight="30.0" prefWidth="640.0" style="-fx-background-color: linear-gradient(#61a2b1, #2A5058);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<!--                  <Pane prefHeight="30.0" prefWidth="640.0" minWidth="-Infinity" maxWidth="-Infinity" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">-->
+<!--                     <children>-->
+<!--                     </children>-->
+                  <AnchorPane prefHeight="30.0" prefWidth="640.0" minWidth="-Infinity" maxWidth="-Infinity" BorderPane.alignment="CENTER" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);">
                      <children>
-                  <AnchorPane prefHeight="30.0" prefWidth="640.0" BorderPane.alignment="CENTER">
-                     <children>
-                              <Button fx:id="signedOutButton" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#signOut" prefHeight="12.0" prefWidth="49.0" text="Log out" textAlignment="CENTER" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0" />
+                              <Button fx:id="signedOutButton" alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#signOut" prefHeight="12.0" prefWidth="49.0" text="Log out" textAlignment="CENTER" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0" />
                               <Label text="Hello, admin" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="5.0" />
                      </children>
                   </AnchorPane>
-                     </children>
-                  </Pane>
+<!--                  </Pane>-->
                   <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="450.0" spacing="4.0" AnchorPane.leftAnchor="94.0" AnchorPane.rightAnchor="94.0" AnchorPane.topAnchor="36.0">
                      <children>
                         <Button fx:id="homeButton" mnemonicParsing="false" prefHeight="36.0" prefWidth="110.0" text="Home">
@@ -76,7 +76,7 @@
             <AnchorPane prefHeight="404.0" prefWidth="640.0" BorderPane.alignment="CENTER">
                <children>
                   <Label alignment="CENTER" prefHeight="364.0" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" text="Statistics" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="20.0" />
-            <Line endX="640.0" stroke="#61a2b1" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+<!--                  <Line endX="640." stroke="#61a2b1" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
                </children>
             </AnchorPane>
          </center>
