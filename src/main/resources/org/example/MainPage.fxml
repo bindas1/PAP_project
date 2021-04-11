@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<AnchorPane fx:controller="org.example.MainPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <BorderPane layoutX="100.0" layoutY="78.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" >
+         <top>
+            <AnchorPane prefHeight="70.0" prefWidth="400.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="81.0" layoutY="-65.0" prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: linear-gradient(#61a2b1, #2A5058);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="signedOutButton" layoutX="537.0" layoutY="4.0" mnemonicParsing="false" prefHeight="12.0" prefWidth="49.0" text="Log out" onAction="#signOut"/>
+                        <Label layoutX="14.0" layoutY="7.0" text="Hello, admin" textFill="WHITE" />
+                     </children>
+                  </Pane>
+                  <HBox layoutX="76.0" layoutY="30.0" prefHeight="40.0" prefWidth="270.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="97.0" AnchorPane.topAnchor="30.0">
+                     <children>
+                        <Button fx:id="homeButton" mnemonicParsing="false" prefHeight="36.0" prefWidth="100.0" text="Home">
+                           <HBox.margin>
+                              <Insets right="2.0" top="2.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../images/home.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="ordersButton" mnemonicParsing="false" prefHeight="36.0" prefWidth="100.0" text="Orders">
+                           <HBox.margin>
+                              <Insets right="2.0" top="2.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../images/orders.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="productsButton" mnemonicParsing="false" prefHeight="36.0" prefWidth="100.0" text="Clients">
+                           <HBox.margin>
+                              <Insets right="2.0" top="2.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../images/clients.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="clientsButton" mnemonicParsing="false" prefHeight="36.0" prefWidth="100.0" text="Products">
+                           <HBox.margin>
+                              <Insets right="2.0" top="2.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../images/products.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" layoutX="286.0" layoutY="157.0" prefHeight="280.0" style="-fx-border-color: BLACK;" text="Statistics" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="20.0" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+   <stylesheets>
+      <URL value="@MainPageStyle.css" />
+   </stylesheets>
+
+</AnchorPane>

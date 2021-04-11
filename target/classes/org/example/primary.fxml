@@ -5,13 +5,55 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="194.0" prefWidth="277.0" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PrimaryController">
-   <children>
-      <Button mnemonicParsing="false" text="Zamówienia" />
-      <Label text="Primary View" />
-      <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Switch to Secondary View" textFill="#288b21" />
-   </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<GridPane fx:controller="org.example.PrimaryController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10" styleClass="root">
+   <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+
+   <Text id="welcome-text" text="Welcome to our shop"
+         GridPane.columnIndex="0" GridPane.rowIndex="0"
+         GridPane.columnSpan="2"/>
+
+   <Label text="Admin Name:"
+          GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+   <TextField  fx:id="usernameField"
+           GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+   <Label text="Password:"
+          GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+   <PasswordField fx:id="passwordField"
+                  GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+   <HBox spacing="10" alignment="bottom_right"
+         GridPane.columnIndex="1" GridPane.rowIndex="4">
+      <Button text="Sign In"
+              onAction="#handleSubmitButtonAction"/>
+   </HBox>
+
+   <Text fx:id="actiontarget"
+         GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+   <stylesheets>
+      <URL value="@Login.css" />
+   </stylesheets>
+
+</GridPane>
+
+<!--<VBox alignment="CENTER" prefHeight="194.0" prefWidth="277.0" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PrimaryController">-->
+<!--   <children>-->
+<!--      <Button mnemonicParsing="false" text="Zamówienia" />-->
+<!--      <Label text="Primary View" />-->
+<!--      <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Switch to Secondary View" textFill="#288b21" />-->
+<!--   </children>-->
+<!--   <padding>-->
+<!--      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />-->
+<!--   </padding>-->
+<!--</VBox>-->
