@@ -15,7 +15,7 @@ root {
 #welcome {
     -fx-font-size: 12px;
     -fx-font-family: "Arial Black";
-    -fx-fill: #818181;
+    -fx-fill: WHITE;
     -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
 }
 
@@ -35,7 +35,13 @@ root {
 #signedOutButton{
     -fx-text-fill: WHITE;
     -fx-font-weight: normal;
-    -fx-font-size: "10.0";
+    -fx-font-size: 10px;
     -fx-background-color: linear-gradient(#d90f23, #ad0919);
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+#homeButton:hover, #ordersButton:hover, #productsButton:hover, #clientsButton:hover {
+    -fx-text-fill: WHITE;
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-border-color: linear-gradient(#61a2b1, #2A5058);
 }

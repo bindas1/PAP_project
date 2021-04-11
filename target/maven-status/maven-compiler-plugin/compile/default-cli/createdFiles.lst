@@ -1,4 +1,4 @@
-module-info.class
 org\example\MainPage.class
-org\example\App.class
 org\example\PrimaryController.class
+module-info.class
+org\example\App.class
