@@ -13,27 +13,29 @@ root {
 }
 
 #welcome {
-    -fx-font-size: 16px;
+    -fx-font-size: 12px;
     -fx-font-family: "Arial Black";
     -fx-fill: #818181;
     -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
 }
 
 .button {
-    -fx-text-fill: white;
     -fx-font-family: "Arial Narrow";
     -fx-font-weight: bold;
     -fx-background-color: linear-gradient(#61a2b1, #2A5058);
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
     -fx-cursor: hand;
 }
 
 #homeButton, #ordersButton, #productsButton, #clientsButton {
-    -fx-font-size: 24px;
     -fx-text-fill: linear-gradient(#61a2b1, #2A5058);
-    -fx-font-family: "Arial Narrow";
-    -fx-font-weight: bold;
-    -fx-background-color: white;
-    -fx-padding: 0 0 0 5;
+    -fx-background-color: WHITE;
+    -fx-border-color: linear-gradient(#61a2b1, #2A5058);
+}
 
+#signedOutButton{
+    -fx-text-fill: WHITE;
+    -fx-font-weight: normal;
+    -fx-font-size: "10.0";
+    -fx-background-color: linear-gradient(#d90f23, #ad0919);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
 }
