@@ -55,9 +55,10 @@ root {
 }
 
 #signedOutButton{
+
     -fx-text-fill: WHITE;
     -fx-font-weight: normal;
-    -fx-font-size: 10px;
+    -fx-font-size: 12px;
     -fx-background-color: linear-gradient(#d90f23, #ad0919);
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
     -fx-border-color: BLACK;

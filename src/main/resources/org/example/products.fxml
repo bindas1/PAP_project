@@ -17,14 +17,14 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ProductsController">
          <top>
-            <AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="640.0" style="-fx-background-color: WHITE; -fx-border-color: #45d4db;" BorderPane.alignment="CENTER">
+            <AnchorPane minWidth="-Infinity" prefHeight="70.0" prefWidth="640.0" style="-fx-background-color: #45d4db; -fx-border-color: #45d4db;" BorderPane.alignment="CENTER">
                <children>
 <!--                  <Pane prefHeight="30.0" prefWidth="640.0" minWidth="-Infinity" maxWidth="-Infinity" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">-->
 <!--                     <children>-->
 <!--                     </children>-->
                   <AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="640.0" style="-fx-background-color: #45d4db;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
                      <children>
-                              <Button fx:id="signedOutButton" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#signOut" prefHeight="12.0" prefWidth="49.0" text="Log out" textAlignment="CENTER" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="3.0" />
+                              <Button fx:id="signedOutButton" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#signOut" prefHeight="12.0" prefWidth="55.0" text="Log out" textAlignment="CENTER" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="3.0" />
                               <Label fx:id="welcome" layoutX="-2.0" layoutY="-2.0" prefHeight="34.0" prefWidth="115.0" style="-fx-border-color: #2A5058; -fx-border-radius: 20px;" text="Hello, admin" textFill="#45d4db" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0">
                      <graphic>
                         <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
@@ -39,7 +39,7 @@
                      </children>
                   </AnchorPane>
 <!--                  </Pane>-->
-                  <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="450.0" spacing="4.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0">
+                  <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="450.0" spacing="4.0" style="-fx-background-color: WHITE;" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0">
                      <children>
                         <Button fx:id="homeButton" mnemonicParsing="false" prefHeight="36.0" prefWidth="110.0" text="Home" onAction="#goToMainPage">
                            <graphic>
@@ -78,6 +78,9 @@
                            </graphic>
                         </Button>
                      </children>
+                     <padding>
+                        <Insets top="2.0" />
+                     </padding>
                   </HBox>
             <Pane layoutY="35.0" prefHeight="42.0" prefWidth="120.0" style="-fx-background-color: #45d4db;" AnchorPane.topAnchor="34.0" />
                </children>
