@@ -12,16 +12,11 @@ root {
     -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
 }
 
-#welcome-text {
-    -fx-font-size: 32px;
+#welcome {
+    -fx-font-size: 16px;
     -fx-font-family: "Arial Black";
     -fx-fill: #818181;
     -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
-}
-#actiontarget {
-    -fx-fill: FIREBRICK;
-    -fx-font-weight: bold;
-    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
 }
 
 .button {
@@ -31,4 +26,14 @@ root {
     -fx-background-color: linear-gradient(#61a2b1, #2A5058);
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
     -fx-cursor: hand;
+}
+
+#homeButton, #ordersButton, #productsButton, #clientsButton {
+    -fx-font-size: 24px;
+    -fx-text-fill: linear-gradient(#61a2b1, #2A5058);
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-padding: 0 0 0 5;
+
 }
