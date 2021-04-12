@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.MainPage">
@@ -82,7 +81,6 @@
                   <Insets top="2.0" />
                </padding>
                   </HBox>
-            <Pane layoutY="35.0" prefHeight="42.0" prefWidth="120.0" style="-fx-background-color: #45d4db;" AnchorPane.topAnchor="34.0" />
                </children>
          <BorderPane.margin>
             <Insets />
@@ -90,19 +88,29 @@
             </AnchorPane>
          </top>
          <center>
-            <AnchorPane prefHeight="187.0" prefWidth="610.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Label alignment="CENTER" prefHeight="370.0" prefWidth="490.0" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" text="Statistics" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="20.0" />
-            <LineChart layoutX="60.0" layoutY="248.0" prefHeight="150.0" prefWidth="230.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="248.0">
-              <xAxis>
-                <CategoryAxis side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis side="LEFT" />
-              </yAxis>
-            </LineChart>
-<!--                  <Line endX="640." stroke="#61a2b1" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
-               </children>
+            <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+                  <AnchorPane fx:id="statistics1" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <Label alignment="CENTER" text="Statistics 1" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <graphic>
+                  <LineChart prefHeight="150.0" prefWidth="230.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+               </graphic>
+                    </Label>
+               </AnchorPane>
+             <AnchorPane fx:id="statistics2" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                 <Label alignment="CENTER" text="Statistics 2" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+             </AnchorPane>
+             <AnchorPane fx:id="statistics3" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                 <Label alignment="CENTER" text="Statistics 3" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+             </AnchorPane>
+         </children>
             </AnchorPane>
          </center>
 
@@ -114,9 +122,9 @@
          <children>
             <VBox layoutX="10.0" layoutY="14.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0" AnchorPane.leftAnchor="10.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" text="Statistics 1" />
-                  <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" text="Statistics 2" />
-                  <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" text="Statistics 3" />
+                  <Button mnemonicParsing="false" onAction="#setStatistics1" prefHeight="34.0" prefWidth="100.0" text="Statistics 1" />
+                  <Button mnemonicParsing="false" onAction="#setStatistics2" prefHeight="34.0" prefWidth="100.0" text="Statistics 2" />
+                  <Button mnemonicParsing="false" onAction="#setStatistics3" prefHeight="34.0" prefWidth="100.0" text="Statistics 3" />
                </children>
                <opaqueInsets>
                   <Insets />
