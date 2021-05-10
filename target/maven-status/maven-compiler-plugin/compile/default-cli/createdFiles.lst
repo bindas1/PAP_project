@@ -1,9 +1,9 @@
 org\example\Database.class
 org\example\ClientsController.class
 org\example\PrimaryController.class
+org\example\Product.class
 module-info.class
 org\example\Database$1.class
-org\example\RegisterController.class
 org\example\App.class
 org\example\MainPage.class
 org\example\ProductsController.class

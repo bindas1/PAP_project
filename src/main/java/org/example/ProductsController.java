@@ -7,6 +7,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class ProductsController {
     @FXML AnchorPane addProductWindow;
@@ -30,7 +31,25 @@ public class ProductsController {
         addProductWindow.setVisible(false);
         productsListWindow.setVisible(true);
     }
-    @FXML protected void addProduct(ActionEvent event) throws IOException{
-        System.out.println("produkt dodany");
+    @FXML protected void addProduct(ActionEvent event) throws IOException, SQLException {
+        String filledProductName = product_name.getText();
+
+        if (!filledProductName.trim().isEmpty() && !price.getText().isEmpty() && price.getText().matches("[-+]?[0-9]*\\.?[0-9]+")) {
+            float filledPrice = Float.parseFloat(price.getText());
+            int filledEan;
+
+            if (ean.getText().isEmpty()) {
+                 filledEan = 0;
+            }
+            else {
+                filledEan = Integer.parseInt(ean.getText());
+            }
+
+            Product new_product = new Product(filledProductName, filledPrice, filledEan);
+            Database database = new Database();
+            database.insertRecord("Products", new_product.getArguments());
+            System.out.println("Row inserted into Products with following data: ");
+            System.out.println(new_product.getArguments());
+        }
     }
 }

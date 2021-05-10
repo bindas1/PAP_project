@@ -108,15 +108,19 @@
                         </columnConstraints>
                         <children>
                            <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="Order ID:" />
-                           <TextField prefHeight="10.0" prefWidth="100.0" promptText="Order ID" GridPane.columnIndex="1" />
-                           <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="Email Address:" GridPane.rowIndex="1" />
-                           <TextField prefHeight="10.0" prefWidth="100.0" promptText="Email Address" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                           <TextField prefHeight="10.0" prefWidth="100.0" promptText="Sum" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                           <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="150.0" text="Sum:" GridPane.rowIndex="2" />
-                           <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="150.0" text="Date:" GridPane.rowIndex="3" />
-                           <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="151.0" text="Status:" GridPane.rowIndex="4" />
-                     <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                     <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" >
+                           <TextField fx:id="order_id" prefHeight="10.0" prefWidth="100.0" promptText="Order ID" GridPane.columnIndex="1" />
+                           <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="Products Ids (separated by commas):" GridPane.rowIndex="1"/>
+                           <TextField fx:id="products_ids" prefHeight="10.0" prefWidth="100.0" promptText="22, 44, 1, ..." GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                           <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="Email Address:" GridPane.rowIndex="2" />
+                           <TextField fx:id="email_client" prefHeight="10.0" prefWidth="100.0" promptText="Email Address" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="Quantities of products:" GridPane.rowIndex="3"/>
+                           <TextField fx:id="quantities" prefHeight="10.0" prefWidth="100.0" promptText="5, 1, 2, ..." GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+<!--                           <TextField fx:id="order_date" prefHeight="10.0" prefWidth="100.0" promptText="Sum" GridPane.columnIndex="1" GridPane.rowIndex="2" />-->
+<!--                           <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="150.0" text="Sum:" GridPane.rowIndex="2" />-->
+                           <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="150.0" text="Date:" GridPane.rowIndex="4" />
+                           <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="151.0" text="Status:" GridPane.rowIndex="5" />
+                     <DatePicker fx:id="order_date" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     <ChoiceBox fx:id="shipping_status" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" >
                         <items>
                            <FXCollections fx:factory="observableArrayList">
                               <String fx:value="Shipped (True)" />

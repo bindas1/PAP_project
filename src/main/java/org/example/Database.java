@@ -15,7 +15,8 @@ public class Database {
 
     Hashtable<String, String> INSERT_QUERIES = new Hashtable<>() {{
         put("Clients", "INSERT INTO Clients(email, first_name, last_name, zip_code, city, street_address) VALUES (?, ?, ?, ?, ?, ?)");
-        put("Zamowienia", "INSERT INTO Klienci(email, imie, nazwisko, kod_pocztowy, miasto, ulica_i_nr_domu) VALUES (?, ?, ?, ?, ?, ?)");
+        put("Orders", "INSERT INTO Orders(order_id, product_id, email_client, quantity, order_date, shipping_status) VALUES (?, ?, ?, ?, ?, ?)");
+        put("Products", "INSERT INTO Products(product_name, price, ean) VALUES (?, ?, ?)");
     }};
 
     public void insertRecord(String table, List<Object> arguments) throws SQLException {

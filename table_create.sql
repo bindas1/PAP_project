@@ -9,12 +9,13 @@ PRIMARY KEY(email)
 );
 
 CREATE TABLE Orders(
-order_id INT NOT NULL AUTO_INCREMENT,
+order_id INT NOT NULL,
 product_id INT NOT NULL,
 email_client VARCHAR(128) NOT NULL,
+quantity INT NOT NULL,
 order_date DATE DEFAULT (CURRENT_DATE),
 shipping_status BOOLEAN DEFAULT FALSE,
-PRIMARY KEY(order_id)
+CONSTRAINT PK_Order PRIMARY KEY (order_id, product_id)
 );
 
 CREATE TABLE Products(

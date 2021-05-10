@@ -9,8 +9,10 @@ public class Order
     public void updateArguments()
     {
         arguments = new ArrayList();
+        arguments.add(this.order_id);
         arguments.add(this.product_id);
         arguments.add(this.email_client);
+        arguments.add(this.quantity);
         arguments.add(this.order_date);
         arguments.add(this.shipping_status);
     }
@@ -50,6 +52,16 @@ public class Order
         this.email_client = value;
     }
 
+    private int quantity;
+    public int getquantity()
+    {
+        return this.quantity;
+    }
+    public void setquantity(int value)
+    {
+        this.quantity = value;
+    }
+
     private java.sql.Date order_date;
     public java.sql.Date getorder_date()
     {
@@ -60,29 +72,22 @@ public class Order
         this.order_date = value;
     }
 
-    private boolean shipping_status;
-    public boolean getshipping_status()
+    private int shipping_status;
+    public int getshipping_status()
     {
         return this.shipping_status;
     }
-    public void setshipping_status(boolean value)
+    public void setshipping_status(int value)
     {
         this.shipping_status = value;
     }
 
-    public Order(int order_id_,int product_id_,String email_client_,java.sql.Date order_date_,boolean shipping_status_)
+    public Order(int order_id_, int product_id_, String email_client_, int quantity_, java.sql.Date order_date_, int shipping_status_)
     {
         this.order_id = order_id_;
         this.product_id = product_id_;
         this.email_client = email_client_;
-        this.order_date = order_date_;
-        this.shipping_status = shipping_status_;
-    }
-
-    public Order(int product_id_,String email_client_,java.sql.Date order_date_,boolean shipping_status_)
-    {
-        this.product_id = product_id_;
-        this.email_client = email_client_;
+        this.quantity = quantity_;
         this.order_date = order_date_;
         this.shipping_status = shipping_status_;
         updateArguments();
