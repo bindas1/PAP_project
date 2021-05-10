@@ -102,13 +102,13 @@
                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   </columnConstraints>
                   <children>
-                     <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="Catalog Number:" />
-                     <TextField prefHeight="10.0" prefWidth="100.0" promptText="Catalog Number" GridPane.columnIndex="1" />
-                     <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="Name:" GridPane.rowIndex="1" />
-                     <TextField prefHeight="10.0" prefWidth="100.0" promptText="Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                     <TextField prefHeight="10.0" prefWidth="100.0" promptText="Price" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                     <TextField prefHeight="10.0" prefWidth="100.0" promptText="Ean" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                     <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="150.0" text="Price:" GridPane.rowIndex="2" />
+<!--                     <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="Catalog Number:" />-->
+<!--                     <TextField prefHeight="10.0" prefWidth="100.0" promptText="Catalog Number" GridPane.columnIndex="1" />-->
+                     <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="Name*:" GridPane.rowIndex="1" />
+                     <TextField fx:id="product_name" prefHeight="10.0" prefWidth="100.0" promptText="Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     <TextField fx:id="price" prefHeight="10.0" prefWidth="100.0" promptText="Price" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     <TextField fx:id="ean" prefHeight="10.0" prefWidth="100.0" promptText="Ean" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="150.0" text="Price*:" GridPane.rowIndex="2" />
                      <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="150.0" text="Ean:" GridPane.rowIndex="3" />
                   </children>
                </GridPane>

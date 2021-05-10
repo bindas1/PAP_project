@@ -3,6 +3,7 @@ package org.example;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Pagination;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -11,6 +12,10 @@ public class ProductsController {
     @FXML AnchorPane addProductWindow;
     @FXML AnchorPane productsListWindow;
     @FXML Pagination productsPagination;
+
+    @FXML TextField product_name;
+    @FXML TextField price;
+    @FXML TextField ean;
 
     @FXML private void signOut() throws IOException { App.setRoot("primary"); }
     @FXML private void goToOrders() throws IOException { App.setRoot("orders"); }
