@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ClientsController">
+         <top>
+            <AnchorPane minWidth="-Infinity" prefHeight="70.0" prefWidth="640.0" style="-fx-background-color: #45d4db; -fx-border-color: #45d4db;" BorderPane.alignment="CENTER">
+               <children>
+<!--                  <Pane prefHeight="30.0" prefWidth="640.0" minWidth="-Infinity" maxWidth="-Infinity" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">-->
+<!--                     <children>-->
+<!--                     </children>-->
+                  <AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="640.0" style="-fx-background-color: #45d4db;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
+                     <children>
+                              <Button fx:id="signedOutButton" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#signOut" prefHeight="12.0" prefWidth="55.0" text="Log out" textAlignment="CENTER" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="3.0" />
+                              <Label fx:id="welcome" layoutX="-2.0" layoutY="-2.0" prefHeight="34.0" prefWidth="115.0" style="-fx-border-color: #2A5058; -fx-border-radius: 20px;" text="Hello, admin" textFill="#45d4db" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0">
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/admin.png" />
+                            </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="4.0" />
+                     </padding></Label>
+                     </children>
+                  </AnchorPane>
+<!--                  </Pane>-->
+                  <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="450.0" spacing="4.0" style="-fx-background-color: WHITE;" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0">
+                     <children>
+                        <Button fx:id="homeButton" mnemonicParsing="false" onAction="#goToMainPage" prefHeight="36.0" prefWidth="110.0" text="Home">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/home.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="ordersButton" mnemonicParsing="false" onAction="#goToOrders" prefHeight="36.0" prefWidth="110.0" text="Orders">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/orders.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="productsButton" mnemonicParsing="false" prefHeight="36.0" prefWidth="110.0" text="Clients">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/clients.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="clientsButton" mnemonicParsing="false" onAction="#goToProducts" prefHeight="36.0" prefWidth="110.0" text="Products">
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/products.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets top="2.0" />
+                     </padding>
+                  </HBox>
+               </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="clientsListWindow" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <Label alignment="CENTER" layoutX="22.0" layoutY="2.0" prefHeight="340.0" prefWidth="438.0" text="Clients List" AnchorPane.bottomAnchor="320.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="0.0" />
+               <Pagination fx:id="clientsPagination" layoutX="80.0" layoutY="44.0" prefHeight="320.0" prefWidth="320.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="79.0" AnchorPane.rightAnchor="79.0" AnchorPane.topAnchor="40.0" />
+                  </AnchorPane>
+                  <AnchorPane fx:id="addClientWindow" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058); -fx-border-width: 4; -fx-background-color: #ebebeb;" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+               <GridPane alignment="CENTER" hgap="10.0" layoutX="98.0" layoutY="72.0" prefHeight="180.0" prefWidth="292.0" vgap="5.00" AnchorPane.leftAnchor="74.0" AnchorPane.rightAnchor="94.0" AnchorPane.topAnchor="68.0">
+                 <columnConstraints>
+                   <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                 </columnConstraints>
+                  <children>
+                      <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="Email Address:" />
+                     <TextField fx:id="email" prefHeight="10.0" prefWidth="100.0" promptText="Email Adress*:" GridPane.columnIndex="1" />
+                     <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="First Name:" GridPane.rowIndex="1" />
+                     <TextField fx:id="first_name" prefHeight="10.0" prefWidth="100.0" promptText="First Name*:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     <TextField fx:id="last_name" prefHeight="10.0" prefWidth="100.0" promptText="Last Name*:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     <TextField  fx:id="zip_code" prefHeight="10.0" prefWidth="100.0" promptText="Zip Code*:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="150.0" text="Last Name:" GridPane.rowIndex="2" />
+                     <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="150.0" text="Zip Code:" GridPane.rowIndex="3" />
+                     <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="151.0" text="City:" GridPane.rowIndex="4" />
+                     <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="150.0" text="Street Address:" GridPane.rowIndex="5" />
+                     <TextField fx:id="city" prefHeight="10.0" prefWidth="100.0" promptText="City" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     <TextField fx:id="street_address" prefHeight="10.0" prefWidth="100.0" promptText="Street Address" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  </children>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+               </GridPane>
+               <Button fx:id="closeWindowButton" layoutX="390.0" layoutY="15.0" minWidth="51.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="31.0" prefWidth="75.0" text="Close" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0" />
+               <Button fx:id="saveButton" mnemonicParsing="false" onAction="#addClient" prefHeight="31.0" prefWidth="75.0" text="Save" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="202.0" />
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+
+   <stylesheets>
+      <URL value="@style.css" />
+   </stylesheets>
+   <left>
+      <AnchorPane prefHeight="402.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(#45d4db, #2A5058); " BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="10.0" layoutY="14.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0" AnchorPane.leftAnchor="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addClientWindow" prefHeight="34.0" prefWidth="100.0" text="Add client" />
+                  <Button mnemonicParsing="false" onAction="#Import" prefHeight="34.0" prefWidth="100.0" text="Import" />
+                  <Button mnemonicParsing="false" onAction="#Export" prefHeight="34.0" prefWidth="100.0" text="Export" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </children></AnchorPane>
+   </left>
+
+</BorderPane>

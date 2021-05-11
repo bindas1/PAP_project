@@ -1,5 +1,6 @@
 org\example\Database.class
 org\example\ClientsController.class
+org\example\Helpers.class
 org\example\PrimaryController.class
 org\example\Product.class
 module-info.class
