@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -24,8 +25,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ClientsController {
-    @FXML
-    HBox clientsVBox;
+    @FXML VBox clientsVBox;
     @FXML AnchorPane addClientWindow;
     @FXML AnchorPane clientsListWindow;
     @FXML Pagination clientsPagination;
@@ -37,6 +37,11 @@ public class ClientsController {
     @FXML TextField zip_code;
     @FXML TextField city;
     @FXML TextField street_address;
+
+    public void initialize(){
+        DynamicTable table = new DynamicTable();
+        clientsVBox.getChildren().addAll(table.buildData("Clients"));
+    }
 
     @FXML private void signOut() throws IOException { App.setRoot("primary"); }
     @FXML private void goToOrders() throws IOException { App.setRoot("orders"); }
@@ -122,9 +127,9 @@ public class ClientsController {
         System.out.println("Export");
     }
 
-    @FXML protected void refreshClients(ActionEvent event) throws Exception {
-        DynamicTable table = new DynamicTable();
-        clientsVBox.getChildren().addAll(table.buildData("Clients"));
-    }
+//    @FXML public void refreshClients(ActionEvent event) throws Exception {
+//        DynamicTable table = new DynamicTable();
+//        clientsVBox.getChildren().addAll(table.buildData("Clients"));
+//    }
 
 }

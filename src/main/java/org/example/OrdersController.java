@@ -10,11 +10,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Window;
 
 import java.util.*;
 
 public class OrdersController {
+    @FXML VBox ordersVBox;
     @FXML AnchorPane addOrderWindow;
     @FXML AnchorPane ordersListWindow;
     @FXML Pagination ordersPagination;
@@ -27,9 +29,15 @@ public class OrdersController {
     @FXML DatePicker order_date;
     @FXML ChoiceBox shipping_status;
 
+    public void initialize(){
+        DynamicTable table = new DynamicTable();
+        ordersVBox.getChildren().addAll(table.buildData("Orders"));
+    }
+
     @FXML private void signOut() throws IOException { App.setRoot("primary"); }
     @FXML private void goToMainPage() throws IOException { App.setRoot("MainPage"); }
-    @FXML private void goToClients() throws IOException { App.setRoot("clients"); }
+//    @FXML private void goToClients() throws Exception { App.setRoot("clients"); ClientsController.refreshClients(null);}
+    @FXML private void goToClients() throws Exception { App.setRoot("clients");}
     @FXML private void goToProducts() throws IOException { App.setRoot("products"); }
 
     @FXML protected void addOrderWindow(ActionEvent event) throws IOException{

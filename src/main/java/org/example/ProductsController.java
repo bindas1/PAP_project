@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Pagination;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Window;
 
 import java.io.BufferedReader;
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class ProductsController {
+    @FXML VBox productsVBox;
     @FXML AnchorPane addProductWindow;
     @FXML AnchorPane productsListWindow;
     @FXML Pagination productsPagination;
@@ -24,6 +26,11 @@ public class ProductsController {
     @FXML TextField product_name;
     @FXML TextField price;
     @FXML TextField ean;
+
+    public void initialize(){
+        DynamicTable table = new DynamicTable();
+        productsVBox.getChildren().addAll(table.buildData("Products"));
+    }
 
     @FXML private void signOut() throws IOException { App.setRoot("primary"); }
     @FXML private void goToOrders() throws IOException { App.setRoot("orders"); }
