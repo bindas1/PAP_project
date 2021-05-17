@@ -49,8 +49,8 @@ public class Product
         this.price = value;
     }
 
-    private int ean;
-    public int getean()
+    private long ean;
+    public long getean()
     {
         return this.ean;
     }
@@ -60,7 +60,7 @@ public class Product
     }
 
 
-    public Product(int product_id_,String product_name_,float price_,int ean_)
+    public Product(int product_id_, String product_name_, float price_, long ean_)
     {
         this.product_id = product_id_;
         this.product_name = product_name_;
@@ -68,7 +68,7 @@ public class Product
         this.ean = ean_;
     }
 
-    public Product(String product_name_,float price_,int ean_)
+    public Product(String product_name_, float price_, long ean_)
     {
         this.product_name = product_name_;
         this.price = price_;

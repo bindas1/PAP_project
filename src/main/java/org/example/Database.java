@@ -1,9 +1,12 @@
 package org.example;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
+import javafx.scene.control.TableColumn;
+import javafx.util.Callback;
+
+import java.sql.*;
 import java.util.*;
 
 public class Database {
@@ -20,7 +23,6 @@ public class Database {
     }};
 
     public void insertRecord(String table, List<Object> arguments) throws SQLException {
-
         // Step 1: Establishing a Connection and
         // try-with-resource statement will auto close the connection.
         try {
@@ -28,7 +30,6 @@ public class Database {
                     .getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
 
              // Step 2:Create a statement using connection object
-
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_QUERIES.get(table));
 
             for (int i=0; i< arguments.size(); i++) {
@@ -42,6 +43,24 @@ public class Database {
             // print SQL exception information
             printSQLException(e);
         }
+    }
+    public ResultSet selectRecord(String table) throws SQLException {
+        String select_query= "SELECT * FROM " + table;
+
+        // Step 1: Establishing a Connection and
+        // try-with-resource statement will auto close the connection.
+        try {
+            Connection connection = DriverManager
+                    .getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
+
+            System.out.println(select_query);
+            // Step 2: Execute the query
+            return connection.createStatement().executeQuery(select_query);
+        } catch (SQLException e) {
+            // print SQL exception information
+            printSQLException(e);
+        }
+        return null;
     }
 
     public static void printSQLException(SQLException ex) {

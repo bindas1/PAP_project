@@ -1,8 +1,10 @@
+org\example\DynamicTable.class
 org\example\Database.class
 org\example\ClientsController.class
 org\example\Helpers.class
 org\example\PrimaryController.class
 org\example\Product.class
+org\example\DynamicTable$1.class
 module-info.class
 org\example\Database$1.class
 org\example\App.class

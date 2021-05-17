@@ -108,12 +108,12 @@
                         </columnConstraints>
                         <children>
                            <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="Order ID:" />
-                           <TextField fx:id="order_id" prefHeight="10.0" prefWidth="100.0" promptText="Order ID" GridPane.columnIndex="1" />
-                           <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="Products Ids (separated by commas):" GridPane.rowIndex="1"/>
+                           <TextField fx:id="order_id" prefHeight="10.0" prefWidth="100.0" promptText="Order ID*:" GridPane.columnIndex="1" />
+                           <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="Products Ids (separated by commas)*:" GridPane.rowIndex="1"/>
                            <TextField fx:id="products_ids" prefHeight="10.0" prefWidth="100.0" promptText="22, 44, 1, ..." GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                           <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="Email Address:" GridPane.rowIndex="2" />
-                           <TextField fx:id="email_client" prefHeight="10.0" prefWidth="100.0" promptText="Email Address" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                           <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="Quantities of products:" GridPane.rowIndex="3"/>
+                           <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="Email Address*:" GridPane.rowIndex="2" />
+                           <TextField fx:id="email_client" prefHeight="10.0" prefWidth="100.0" promptText="Email Address*:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="Quantities of products*:" GridPane.rowIndex="3"/>
                            <TextField fx:id="quantities" prefHeight="10.0" prefWidth="100.0" promptText="5, 1, 2, ..." GridPane.columnIndex="1" GridPane.rowIndex="3"/>
 <!--                           <TextField fx:id="order_date" prefHeight="10.0" prefWidth="100.0" promptText="Sum" GridPane.columnIndex="1" GridPane.rowIndex="2" />-->
 <!--                           <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="150.0" text="Sum:" GridPane.rowIndex="2" />-->
@@ -146,8 +146,8 @@
             <VBox layoutX="10.0" layoutY="14.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0" AnchorPane.leftAnchor="10.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#addOrderWindow" prefHeight="34.0" prefWidth="100.0" text="Add order" />
-                  <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" text="Import" />
-                  <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" text="Export" />
+                  <Button mnemonicParsing="false" onAction="#Import" prefHeight="34.0" prefWidth="100.0" text="Import" />
+                  <Button mnemonicParsing="false" onAction="#Export" prefHeight="34.0" prefWidth="100.0" text="Export" />
                </children>
                <opaqueInsets>
                   <Insets />

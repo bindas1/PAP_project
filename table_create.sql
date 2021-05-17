@@ -22,7 +22,7 @@ CREATE TABLE Products(
 product_id INT NOT NULL AUTO_INCREMENT,
 product_name VARCHAR(128) NOT NULL,
 price FLOAT NOT NULL,
-ean INT,
+ean BIGINT,
 PRIMARY KEY(product_id)
 );
 
