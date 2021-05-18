@@ -26,9 +26,11 @@ public class ClientsController {
     @FXML BorderPane clientsTable;
     @FXML AnchorPane addClientWindow;
     @FXML AnchorPane clientsListWindow;
-    @FXML Pagination clientsPagination;
+    @FXML AnchorPane deleteClientWindow;
     @FXML private Button saveButton;
-
+    @FXML private Button deleteButton;
+    
+    @FXML TextField emailDelete;
     @FXML TextField email;
     @FXML TextField first_name;
     @FXML TextField last_name;
@@ -52,7 +54,28 @@ public class ClientsController {
     }
     @FXML protected void closeWindow(ActionEvent event) throws IOException{
         addClientWindow.setVisible(false);
+        deleteClientWindow.setVisible(false);
         clientsListWindow.setVisible(true);
+    }
+
+    @FXML protected void deleteClientWindow(ActionEvent event) throws IOException{
+        deleteClientWindow.setVisible(true);
+        clientsListWindow.setVisible(false);
+    }
+
+    @FXML protected void deleteClient(ActionEvent event) throws IOException, SQLException {
+        String filledDeletedEmail = emailDelete.getText();
+        Window owner = deleteButton.getScene().getWindow();
+
+        if (filledDeletedEmail.trim().isEmpty()) {
+            Helpers.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                    "Please enter client's email");
+            return;
+        }
+        Database database = new Database();
+        database.deleteRecord("Clients", filledDeletedEmail);
+        Helpers.showAlert(Alert.AlertType.CONFIRMATION, owner, "Request confirmation",
+                "Row successfully deleted from Clients");
     }
 
     @FXML protected void addClient(ActionEvent event) throws IOException, SQLException {

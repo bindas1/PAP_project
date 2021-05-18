@@ -63,6 +63,24 @@ public class Database {
         return null;
     }
 
+    public void deleteRecord(String table, String name) throws SQLException {
+        // Step 1: Establishing a Connection and
+        // try-with-resource statement will auto close the connection.
+        try {
+            Connection connection = DriverManager
+                    .getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
+
+            // Step 2:Create a statement using connection object
+            //PreparedStatement preparedStatement = connection.prepareStatement(INSERT_QUERIES.get(table));
+
+//TO DO usuwanie
+
+        }
+        catch (SQLException e){
+            printSQLException(e);
+        }
+    }
+
     public static void printSQLException(SQLException ex) {
         for (Throwable e: ex) {
             if (e instanceof SQLException) {

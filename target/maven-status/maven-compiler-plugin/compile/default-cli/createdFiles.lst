@@ -9,7 +9,6 @@ org\example\DynamicTable$1.class
 org\example\ProductsController.class
 module-info.class
 org\example\Database$1.class
-org\example\DynamicTable$2.class
 org\example\App.class
 org\example\Client.class
 org\example\OrdersController.class
