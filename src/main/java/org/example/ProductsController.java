@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Pagination;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Window;
 
@@ -17,7 +18,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class ProductsController {
-    @FXML VBox productsVBox;
+    @FXML BorderPane productsTable;
     @FXML AnchorPane addProductWindow;
     @FXML AnchorPane productsListWindow;
     @FXML Pagination productsPagination;
@@ -29,7 +30,7 @@ public class ProductsController {
 
     public void initialize(){
         DynamicTable table = new DynamicTable();
-        productsVBox.getChildren().addAll(table.buildData("Products"));
+        productsTable.setCenter(table.buildData("Products"));
     }
 
     @FXML private void signOut() throws IOException { App.setRoot("primary"); }

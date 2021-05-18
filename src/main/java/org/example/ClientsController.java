@@ -8,10 +8,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.text.TextFlow;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -25,7 +23,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ClientsController {
-    @FXML VBox clientsVBox;
+    @FXML BorderPane clientsTable;
     @FXML AnchorPane addClientWindow;
     @FXML AnchorPane clientsListWindow;
     @FXML Pagination clientsPagination;
@@ -40,7 +38,7 @@ public class ClientsController {
 
     public void initialize(){
         DynamicTable table = new DynamicTable();
-        clientsVBox.getChildren().addAll(table.buildData("Clients"));
+        clientsTable.setCenter(table.buildData("Clients"));
     }
 
     @FXML private void signOut() throws IOException { App.setRoot("primary"); }
@@ -76,7 +74,7 @@ public class ClientsController {
                     "No first name specified");
             return;
         }
-        if (!filledLastName.trim().isEmpty()) {
+        if (filledLastName.trim().isEmpty()) {
             Helpers.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
                     "No last name specified");
             return;

@@ -10,13 +10,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Window;
 
 import java.util.*;
 
 public class OrdersController {
-    @FXML VBox ordersVBox;
+    @FXML BorderPane ordersTable;
     @FXML AnchorPane addOrderWindow;
     @FXML AnchorPane ordersListWindow;
     @FXML Pagination ordersPagination;
@@ -31,7 +32,7 @@ public class OrdersController {
 
     public void initialize(){
         DynamicTable table = new DynamicTable();
-        ordersVBox.getChildren().addAll(table.buildData("Orders"));
+       ordersTable.setCenter(table.buildData("Orders"));
     }
 
     @FXML private void signOut() throws IOException { App.setRoot("primary"); }

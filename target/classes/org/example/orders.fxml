@@ -98,7 +98,7 @@
                <children>
                   <AnchorPane fx:id="ordersListWindow" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                      <Label alignment="CENTER" layoutX="22.0" layoutY="2.0" prefHeight="340.0" prefWidth="438.0" text="Orders List" AnchorPane.bottomAnchor="320.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="0.0" />
-                     <VBox fx:id="ordersVBox" alignment="CENTER" layoutX="12.0" layoutY="41.0" maxWidth="Infinity" maxHeight="Infinity" style="-fx-background-color: red;" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="41.0" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS"/>
+                     <BorderPane fx:id="ordersTable" layoutX="12.0" layoutY="41.0" maxWidth="Infinity" maxHeight="Infinity" style="-fx-background-color: red;" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="41.0" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS"/>
 <!--                     <Pagination fx:id="ordersPagination" layoutX="80.0" layoutY="44.0" prefHeight="320.0" prefWidth="320.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="79.0" AnchorPane.rightAnchor="79.0" AnchorPane.topAnchor="40.0" />-->
                   </AnchorPane>
                   <AnchorPane fx:id="addOrderWindow" visible="false" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058); -fx-border-width: 4; -fx-background-color: #ebebeb;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
