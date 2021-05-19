@@ -15,7 +15,6 @@ public class Helpers {
                 new FileChooser.ExtensionFilter("Text Files", "*.txt")
         );
 
-        //fileChooser.setInitialDirectory(new File("C:\\Users\\Bindas\\OneDrive - Politechnika Warszawska\\Documents\\2.PW\\pap21l-z22"));
         File selectedFile = fileChooser.showOpenDialog(null);
         return selectedFile;
     }

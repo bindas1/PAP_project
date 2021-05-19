@@ -1,17 +1,9 @@
 package org.example;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.ObservableList;
-import javafx.scene.control.TableColumn;
-import javafx.util.Callback;
-
 import java.sql.*;
 import java.util.*;
 
 public class Database {
-    // Replace below database url, username and password with your actual database credentials
-//    private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/pap21l?useSSL=false";
     private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/pap21l";
     private static final String DATABASE_USERNAME = "bindas";
     private static final String DATABASE_PASSWORD = "bindas";

@@ -4,11 +4,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Pagination;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Window;
 
 import java.io.BufferedReader;
@@ -21,7 +19,6 @@ public class ProductsController {
     @FXML BorderPane productsTable;
     @FXML AnchorPane addProductWindow;
     @FXML AnchorPane productsListWindow;
-    @FXML Pagination productsPagination;
     @FXML private Button saveButton;
 
     @FXML TextField product_name;
@@ -80,6 +77,8 @@ public class ProductsController {
         Product new_product = new Product(filledProductName, filledPrice, filledEan);
         Database database = new Database();
         database.insertRecord("Products", new_product.getArguments());
+
+        // confirmation of insert
         Helpers.showAlert(Alert.AlertType.CONFIRMATION, owner, "Request confirmation",
                 "Row successfully inserted into Products");
         System.out.println("Row inserted into Products with following data: ");

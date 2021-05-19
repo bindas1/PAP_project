@@ -11,7 +11,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Window;
 
 import java.util.*;
@@ -20,7 +19,6 @@ public class OrdersController {
     @FXML BorderPane ordersTable;
     @FXML AnchorPane addOrderWindow;
     @FXML AnchorPane ordersListWindow;
-    @FXML Pagination ordersPagination;
     @FXML private Button saveButton;
 
     @FXML TextField order_id;
@@ -37,7 +35,6 @@ public class OrdersController {
 
     @FXML private void signOut() throws IOException { App.setRoot("primary"); }
     @FXML private void goToMainPage() throws IOException { App.setRoot("MainPage"); }
-//    @FXML private void goToClients() throws Exception { App.setRoot("clients"); ClientsController.refreshClients(null);}
     @FXML private void goToClients() throws Exception { App.setRoot("clients");}
     @FXML private void goToProducts() throws IOException { App.setRoot("products"); }
 
@@ -104,6 +101,8 @@ public class OrdersController {
             Order new_order = new Order(order_id, product_id, filledEmail, quantity, date, shipping);
             Database database = new Database();
             database.insertRecord("Orders", new_order.getArguments());
+
+            // confirmation of insert
             Helpers.showAlert(Alert.AlertType.CONFIRMATION, owner, "Request confirmation",
                     "Row successfully inserted into Orders");
             System.out.println("Row inserted into Orders with following data: ");

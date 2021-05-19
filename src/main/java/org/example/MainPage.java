@@ -39,6 +39,7 @@ public class MainPage {
             }
         }
 
+        // use TreeMap so that our data is sorted
         TreeMap<java.sql.Date, Float> tmap = new TreeMap<java.sql.Date, Float>(orders_values);
         System.out.println(tmap);
 
@@ -52,6 +53,7 @@ public class MainPage {
             statistics_1.getData().add(d);
         }
 
+        // create bar chart using selected data
         final CategoryAxis xAxis = new CategoryAxis();
         final NumberAxis yAxis = new NumberAxis();
         final BarChart<String, Number> bc =

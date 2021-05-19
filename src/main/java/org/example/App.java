@@ -19,8 +19,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException, Exception {
         scene = new Scene(loadFXML("primary"), 640, 480);
-//        scene = new Scene(loadFXML("MainPage"), 640, 480);
-        Image icon = new Image("org/example/images/icon.png");                       //Mam jakiś problem z wyszukaniem pliku png :/ "Failed to execute goal org.openjfx:javafx-maven-plugin:0.0.4:run (default-cli) on project PAP21L-Z22: Error"
+        Image icon = new Image("org/example/images/icon.png");
         stage.getIcons().add(icon);
         stage.setTitle("Zarządzanie sklepem - PAP21L - Z22");
         stage.setScene(scene);
