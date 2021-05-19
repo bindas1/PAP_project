@@ -2,9 +2,6 @@
 
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.LineChart?>
-<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -18,9 +15,6 @@
          <top>
             <AnchorPane minWidth="-Infinity" prefHeight="70.0" prefWidth="640.0" style="-fx-background-color: #45d4db; -fx-border-color: #45d4db;" BorderPane.alignment="CENTER">
                <children>
-<!--                  <Pane prefHeight="30.0" prefWidth="640.0" minWidth="-Infinity" maxWidth="-Infinity" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">-->
-<!--                     <children>-->
-<!--                     </children>-->
                   <AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="640.0" style="-fx-background-color: #45d4db;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
                      <children>
                               <Button fx:id="signedOutButton" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#signOut" prefHeight="12.0" prefWidth="55.0" text="Log out" textAlignment="CENTER" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="3.0" />
@@ -90,20 +84,8 @@
          <center>
             <AnchorPane BorderPane.alignment="CENTER">
          <children>
-                  <AnchorPane fx:id="statistics1" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-                     <Label alignment="CENTER" text="Statistics 1" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-         <graphic>
-                  <LineChart prefHeight="150.0" prefWidth="230.0">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis side="LEFT" />
-                    </yAxis>
-                  </LineChart>
-               </graphic>
-                    </Label>
-               </AnchorPane>
+                  <BorderPane fx:id="statistics1" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+               </BorderPane>
              <AnchorPane fx:id="statistics2" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                  <Label alignment="CENTER" text="Statistics 2" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
              </AnchorPane>

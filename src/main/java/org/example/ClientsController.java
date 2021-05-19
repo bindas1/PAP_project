@@ -1,36 +1,23 @@
 package org.example;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
-import javafx.scene.text.TextFlow;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import javafx.stage.Window;
-import javafx.util.Callback;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ClientsController {
     @FXML BorderPane clientsTable;
     @FXML AnchorPane addClientWindow;
     @FXML AnchorPane clientsListWindow;
-    @FXML AnchorPane deleteClientWindow;
     @FXML private Button saveButton;
-    @FXML private Button deleteButton;
-    
-    @FXML TextField emailDelete;
+
     @FXML TextField email;
     @FXML TextField first_name;
     @FXML TextField last_name;
@@ -54,28 +41,7 @@ public class ClientsController {
     }
     @FXML protected void closeWindow(ActionEvent event) throws IOException{
         addClientWindow.setVisible(false);
-        deleteClientWindow.setVisible(false);
         clientsListWindow.setVisible(true);
-    }
-
-    @FXML protected void deleteClientWindow(ActionEvent event) throws IOException{
-        deleteClientWindow.setVisible(true);
-        clientsListWindow.setVisible(false);
-    }
-
-    @FXML protected void deleteClient(ActionEvent event) throws IOException, SQLException {
-        String filledDeletedEmail = emailDelete.getText();
-        Window owner = deleteButton.getScene().getWindow();
-
-        if (filledDeletedEmail.trim().isEmpty()) {
-            Helpers.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                    "Please enter client's email");
-            return;
-        }
-        Database database = new Database();
-        database.deleteRecord("Clients", filledDeletedEmail);
-        Helpers.showAlert(Alert.AlertType.CONFIRMATION, owner, "Request confirmation",
-                "Row successfully deleted from Clients");
     }
 
     @FXML protected void addClient(ActionEvent event) throws IOException, SQLException {
@@ -111,6 +77,8 @@ public class ClientsController {
         Client new_client = new Client(filledEmail, filledFirstName, filledLastName, filledZipCode, filledCity, filledStreetAddress);
         Database database = new Database();
         database.insertRecord("Clients", new_client.getArguments());
+
+        // confirmation of insert
         Helpers.showAlert(Alert.AlertType.CONFIRMATION, owner, "Request confirmation",
                 "Row successfully inserted into Clients");
         System.out.println("Row inserted into Clients with following data: ");
@@ -147,10 +115,5 @@ public class ClientsController {
     @FXML protected void Export(ActionEvent event) throws IOException {
         System.out.println("Export");
     }
-
-//    @FXML public void refreshClients(ActionEvent event) throws Exception {
-//        DynamicTable table = new DynamicTable();
-//        clientsVBox.getChildren().addAll(table.buildData("Clients"));
-//    }
 
 }

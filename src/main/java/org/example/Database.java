@@ -1,17 +1,9 @@
 package org.example;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.ObservableList;
-import javafx.scene.control.TableColumn;
-import javafx.util.Callback;
-
 import java.sql.*;
 import java.util.*;
 
 public class Database {
-    // Replace below database url, username and password with your actual database credentials
-//    private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/pap21l?useSSL=false";
     private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/pap21l";
     private static final String DATABASE_USERNAME = "bindas";
     private static final String DATABASE_PASSWORD = "bindas";
@@ -21,6 +13,9 @@ public class Database {
         put("Orders", "INSERT INTO Orders(order_id, product_id, email_client, quantity, order_date, shipping_status) VALUES (?, ?, ?, ?, ?, ?)");
         put("Products", "INSERT INTO Products(product_name, price, ean) VALUES (?, ?, ?)");
     }};
+
+    private static final String JOIN_QUERY = "SELECT orders.order_date, orders.quantity * products.price AS Value_of_order FROM orders\n" +
+            "INNER JOIN products on orders.product_id=products.product_id;";
 
     public void insertRecord(String table, List<Object> arguments) throws SQLException {
         // Step 1: Establishing a Connection and
@@ -56,6 +51,21 @@ public class Database {
             System.out.println(select_query);
             // Step 2: Execute the query
             return connection.createStatement().executeQuery(select_query);
+        } catch (SQLException e) {
+            // print SQL exception information
+            printSQLException(e);
+        }
+        return null;
+    }
+    public ResultSet selectJoinRecords() throws SQLException {
+        // Step 1: Establishing a Connection and
+        // try-with-resource statement will auto close the connection.
+        try {
+            Connection connection = DriverManager
+                    .getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
+
+            // Step 2: Execute the query
+            return connection.createStatement().executeQuery(JOIN_QUERY);
         } catch (SQLException e) {
             // print SQL exception information
             printSQLException(e);

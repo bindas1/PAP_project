@@ -19,9 +19,6 @@
          <top>
             <AnchorPane minWidth="-Infinity" prefHeight="70.0" prefWidth="640.0" style="-fx-background-color: #45d4db; -fx-border-color: #45d4db;" BorderPane.alignment="CENTER">
                <children>
-<!--                  <Pane prefHeight="30.0" prefWidth="640.0" minWidth="-Infinity" maxWidth="-Infinity" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">-->
-<!--                     <children>-->
-<!--                     </children>-->
                   <AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="640.0" style="-fx-background-color: #45d4db;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
                      <children>
                               <Button fx:id="signedOutButton" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#signOut" prefHeight="12.0" prefWidth="55.0" text="Log out" textAlignment="CENTER" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="3.0" />
@@ -38,7 +35,6 @@
                      </padding></Label>
                      </children>
                   </AnchorPane>
-<!--                  </Pane>-->
                   <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="450.0" spacing="4.0" style="-fx-background-color: WHITE;" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0">
                      <children>
                         <Button fx:id="homeButton" mnemonicParsing="false" onAction="#goToMainPage" prefHeight="36.0" prefWidth="110.0" text="Home">
