@@ -14,19 +14,15 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
 <?import java.lang.String?>
 <?import javafx.collections.FXCollections?>
-<?import javafx.scene.control.Pagination?>
+
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.OrdersController">
          <top>
             <AnchorPane minWidth="-Infinity" prefHeight="70.0" prefWidth="640.0" style="-fx-background-color: #45d4db; -fx-border-color: #45d4db;" BorderPane.alignment="CENTER">
                <children>
-<!--                  <Pane prefHeight="30.0" prefWidth="640.0" minWidth="-Infinity" maxWidth="-Infinity" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">-->
-<!--                     <children>-->
-<!--                     </children>-->
                   <AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="640.0" style="-fx-background-color: #45d4db;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
                      <children>
                               <Button fx:id="signedOutButton" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#signOut" prefHeight="12.0" prefWidth="55.0" text="Log out" textAlignment="CENTER" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="3.0" />
@@ -43,7 +39,6 @@
                      </padding></Label>
                      </children>
                   </AnchorPane>
-<!--                  </Pane>-->
                   <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="450.0" spacing="4.0" style="-fx-background-color: WHITE;" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0">
                      <children>
                         <Button fx:id="homeButton" mnemonicParsing="false" onAction="#goToMainPage" prefHeight="36.0" prefWidth="110.0" text="Home">
@@ -99,7 +94,6 @@
                   <AnchorPane fx:id="ordersListWindow" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                      <Label alignment="CENTER" layoutX="22.0" layoutY="2.0" prefHeight="340.0" prefWidth="438.0" text="Orders List" AnchorPane.bottomAnchor="320.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="0.0" />
                      <BorderPane fx:id="ordersTable" layoutX="12.0" layoutY="41.0" maxWidth="Infinity" maxHeight="Infinity" style="-fx-background-color: red;" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="41.0" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS"/>
-<!--                     <Pagination fx:id="ordersPagination" layoutX="80.0" layoutY="44.0" prefHeight="320.0" prefWidth="320.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="79.0" AnchorPane.rightAnchor="79.0" AnchorPane.topAnchor="40.0" />-->
                   </AnchorPane>
                   <AnchorPane fx:id="addOrderWindow" visible="false" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058); -fx-border-width: 4; -fx-background-color: #ebebeb;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                      <GridPane alignment="CENTER" hgap="10.0" layoutX="98.0" layoutY="72.0" prefHeight="180.0" prefWidth="292.0" vgap="5.00" AnchorPane.leftAnchor="74.0" AnchorPane.rightAnchor="94.0" AnchorPane.topAnchor="68.0">
@@ -116,8 +110,6 @@
                            <TextField fx:id="email_client" prefHeight="10.0" prefWidth="100.0" promptText="Email Address*:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="Quantities of products*:" GridPane.rowIndex="3"/>
                            <TextField fx:id="quantities" prefHeight="10.0" prefWidth="100.0" promptText="5, 1, 2, ..." GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-<!--                           <TextField fx:id="order_date" prefHeight="10.0" prefWidth="100.0" promptText="Sum" GridPane.columnIndex="1" GridPane.rowIndex="2" />-->
-<!--                           <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="150.0" text="Sum:" GridPane.rowIndex="2" />-->
                            <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="150.0" text="Date:" GridPane.rowIndex="4" />
                            <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="151.0" text="Status:" GridPane.rowIndex="5" />
                      <DatePicker fx:id="order_date" GridPane.columnIndex="1" GridPane.rowIndex="4" />
