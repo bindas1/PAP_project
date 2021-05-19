@@ -43,14 +43,14 @@ public class MainPage {
         TreeMap<java.sql.Date, Float> tmap = new TreeMap<java.sql.Date, Float>(orders_values);
         System.out.println(tmap);
 
-        XYChart.Series statistics_1 = new XYChart.Series();
-        statistics_1.setName("Total value of orders in particular day");
+        XYChart.Series statistics_series = new XYChart.Series();
+        statistics_series.setName("Total value of orders in particular day");
 
         for (Map.Entry<java.sql.Date, Float> entry : tmap.entrySet()) {
             java.sql.Date date = entry.getKey();
             Float value = entry.getValue();
             XYChart.Data<String, Float> d = new XYChart.Data<>(date.toString(), value);
-            statistics_1.getData().add(d);
+            statistics_series.getData().add(d);
         }
 
         // create bar chart using selected data
@@ -62,7 +62,7 @@ public class MainPage {
         xAxis.setLabel("Date");
         yAxis.setLabel("Value of profit");
 
-        bc.getData().addAll(statistics_1);
+        bc.getData().addAll(statistics_series);
         statistics1.setCenter(bc);
 
     }
