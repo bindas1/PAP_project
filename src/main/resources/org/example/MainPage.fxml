@@ -18,20 +18,20 @@
                   <AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="640.0" style="-fx-background-color: #45d4db;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
                      <children>
                               <Button fx:id="signedOutButton" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#signOut" prefHeight="12.0" prefWidth="55.0" text="Log out" textAlignment="CENTER" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="3.0" />
-                              <Label fx:id="welcome" layoutX="-2.0" layoutY="-2.0" prefHeight="34.0" prefWidth="115.0" style="-fx-border-color: #2A5058; -fx-border-radius: 20px;" text="Hello, admin" textFill="#45d4db" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0">
-                     <graphic>
-                        <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@images/admin.png" />
-                            </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="4.0" />
-                     </padding></Label>
+                              <Label fx:id="welcome" prefHeight="34.0" prefWidth="115.0" style="-fx-border-color: #2A5058; -fx-border-radius: 20px;" text="Hello, admin" textFill="#45d4db" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0">
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                            <Image url="@images/admin.png" />
+                                        </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <padding>
+                                    <Insets left="4.0" />
+                                 </padding>
+                              </Label>
                      </children>
                   </AnchorPane>
-<!--                  </Pane>-->
                   <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="450.0" spacing="4.0" style="-fx-background-color: WHITE;" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0">
                      <children>
                         <Button fx:id="homeButton" mnemonicParsing="false" prefHeight="36.0" prefWidth="110.0" text="Home">
@@ -71,9 +71,9 @@
                            </graphic>
                         </Button>
                      </children>
-               <padding>
-                  <Insets top="2.0" />
-               </padding>
+                      <padding>
+                        <Insets top="2.0" />
+                      </padding>
                   </HBox>
                </children>
          <BorderPane.margin>
@@ -83,16 +83,15 @@
          </top>
          <center>
             <AnchorPane BorderPane.alignment="CENTER">
-         <children>
-                  <BorderPane fx:id="statistics1" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-               </BorderPane>
-             <AnchorPane fx:id="statistics2" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-                 <Label alignment="CENTER" text="Statistics 2" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
-             </AnchorPane>
-             <AnchorPane fx:id="statistics3" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-                 <Label alignment="CENTER" text="Statistics 3" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
-             </AnchorPane>
-         </children>
+                <children>
+                  <BorderPane fx:id="statistics1" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+                  <AnchorPane fx:id="statistics2" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <Label alignment="CENTER" text="Statistics 2" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+                  </AnchorPane>
+                  <AnchorPane fx:id="statistics3" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <Label alignment="CENTER" text="Statistics 3" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+                  </AnchorPane>
+                </children>
             </AnchorPane>
          </center>
 
@@ -102,17 +101,15 @@
    <left>
       <AnchorPane prefHeight="402.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(#45d4db, #2A5058);" BorderPane.alignment="CENTER">
          <children>
-            <VBox layoutX="10.0" layoutY="14.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0" AnchorPane.leftAnchor="10.0">
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" AnchorPane.leftAnchor="10.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#setStatistics1" prefHeight="34.0" prefWidth="100.0" text="Statistics 1" />
                   <Button mnemonicParsing="false" onAction="#setStatistics2" prefHeight="34.0" prefWidth="100.0" text="Statistics 2" />
                   <Button mnemonicParsing="false" onAction="#setStatistics3" prefHeight="34.0" prefWidth="100.0" text="Statistics 3" />
                </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
             </VBox>
-         </children></AnchorPane>
+         </children>
+      </AnchorPane>
    </left>
 
 </BorderPane>

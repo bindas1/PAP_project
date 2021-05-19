@@ -15,7 +15,6 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-
 <?import java.lang.String?>
 <?import javafx.collections.FXCollections?>
 
@@ -26,17 +25,18 @@
                   <AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="640.0" style="-fx-background-color: #45d4db;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
                      <children>
                               <Button fx:id="signedOutButton" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#signOut" prefHeight="12.0" prefWidth="55.0" text="Log out" textAlignment="CENTER" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="3.0" />
-                              <Label fx:id="welcome" layoutX="-2.0" layoutY="-2.0" prefHeight="34.0" prefWidth="115.0" style="-fx-border-color: #2A5058; -fx-border-radius: 20px;" text="Hello, admin" textFill="#45d4db" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0">
-                     <graphic>
-                        <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@images/admin.png" />
-                            </image>
-                        </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets left="4.0" />
-                     </padding></Label>
+                              <Label fx:id="welcome" prefHeight="34.0" prefWidth="115.0" style="-fx-border-color: #2A5058; -fx-border-radius: 20px;" text="Hello, admin" textFill="#45d4db" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0">
+                                 <graphic>
+                                    <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                            <Image url="@images/admin.png" />
+                                        </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <padding>
+                                    <Insets left="4.0" />
+                                 </padding>
+                              </Label>
                      </children>
                   </AnchorPane>
                   <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="450.0" spacing="4.0" style="-fx-background-color: WHITE;" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0">
@@ -83,20 +83,17 @@
                      </padding>
                   </HBox>
                </children>
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>
             </AnchorPane>
          </top>
          <center>
             <AnchorPane BorderPane.alignment="CENTER">
                <children>
                   <AnchorPane fx:id="ordersListWindow" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-                     <Label alignment="CENTER" layoutX="22.0" layoutY="2.0" prefHeight="340.0" prefWidth="438.0" text="Orders List" AnchorPane.bottomAnchor="320.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="0.0" />
-                     <BorderPane fx:id="ordersTable" layoutX="12.0" layoutY="41.0" maxWidth="Infinity" maxHeight="Infinity" style="-fx-background-color: red;" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="41.0" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS"/>
+                     <Label alignment="CENTER" prefHeight="340.0" prefWidth="438.0" text="Orders List" AnchorPane.bottomAnchor="320.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="0.0" />
+                     <BorderPane fx:id="ordersTable" maxWidth="Infinity" maxHeight="Infinity" style="-fx-background-color: red;" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="41.0" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS"/>
                   </AnchorPane>
                   <AnchorPane fx:id="addOrderWindow" visible="false" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058); -fx-border-width: 4; -fx-background-color: #ebebeb;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-                     <GridPane alignment="CENTER" hgap="10.0" layoutX="98.0" layoutY="72.0" prefHeight="180.0" prefWidth="292.0" vgap="5.00" AnchorPane.leftAnchor="74.0" AnchorPane.rightAnchor="94.0" AnchorPane.topAnchor="68.0">
+                     <GridPane alignment="CENTER" hgap="10.0" prefHeight="180.0" prefWidth="292.0" vgap="5.00" AnchorPane.leftAnchor="74.0" AnchorPane.rightAnchor="94.0" AnchorPane.topAnchor="68.0">
                         <columnConstraints>
                            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -112,18 +109,18 @@
                            <TextField fx:id="quantities" prefHeight="10.0" prefWidth="100.0" promptText="5, 1, 2, ..." GridPane.columnIndex="1" GridPane.rowIndex="3"/>
                            <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="150.0" text="Date:" GridPane.rowIndex="4" />
                            <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="151.0" text="Status:" GridPane.rowIndex="5" />
-                     <DatePicker fx:id="order_date" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                     <ChoiceBox fx:id="shipping_status" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" >
-                        <items>
-                           <FXCollections fx:factory="observableArrayList">
-                              <String fx:value="Shipped (True)" />
-                              <String fx:value="In progress (False)" />
-                           </FXCollections>
-                        </items>
-                     </ChoiceBox>
+                           <DatePicker fx:id="order_date" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                           <ChoiceBox fx:id="shipping_status" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" >
+                              <items>
+                                 <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Shipped (True)" />
+                                    <String fx:value="In progress (False)" />
+                                 </FXCollections>
+                              </items>
+                           </ChoiceBox>
                         </children>
                      </GridPane>
-                     <Button fx:id="closeWindowButton" layoutX="390.0" layoutY="15.0" minWidth="51.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="31.0" prefWidth="75.0" text="Close" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0" />
+                     <Button fx:id="closeWindowButton" minWidth="51.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="31.0" prefWidth="75.0" text="Close" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0" />
                      <Button fx:id="saveButton" mnemonicParsing="false" onAction="#addOrder" prefHeight="31.0" prefWidth="75.0" text="Save" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="202.0" />
                   </AnchorPane>
                </children>
@@ -136,17 +133,15 @@
    <left>
       <AnchorPane prefHeight="402.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(#45d4db, #2A5058);" BorderPane.alignment="CENTER">
          <children>
-            <VBox layoutX="10.0" layoutY="14.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0" AnchorPane.leftAnchor="10.0">
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" AnchorPane.leftAnchor="10.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#addOrderWindow" prefHeight="34.0" prefWidth="100.0" text="Add order" />
                   <Button mnemonicParsing="false" onAction="#Import" prefHeight="34.0" prefWidth="100.0" text="Import" />
                   <Button mnemonicParsing="false" onAction="#Export" prefHeight="34.0" prefWidth="100.0" text="Export" />
                </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
             </VBox>
-         </children></AnchorPane>
+         </children>
+      </AnchorPane>
    </left>
 
 </BorderPane>

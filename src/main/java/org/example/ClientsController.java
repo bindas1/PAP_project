@@ -16,7 +16,9 @@ public class ClientsController {
     @FXML BorderPane clientsTable;
     @FXML AnchorPane addClientWindow;
     @FXML AnchorPane clientsListWindow;
+    @FXML AnchorPane deleteClientWindow;
     @FXML private Button saveButton;
+    @FXML private Button deleteButton;
 
     @FXML TextField email;
     @FXML TextField first_name;
@@ -41,9 +43,17 @@ public class ClientsController {
     }
     @FXML protected void closeWindow(ActionEvent event) throws IOException{
         addClientWindow.setVisible(false);
+        deleteClientWindow.setVisible(false);
         clientsListWindow.setVisible(true);
     }
+    @FXML protected void deleteClientWindow(ActionEvent event) throws IOException{
+        deleteClientWindow.setVisible(true);
+        clientsListWindow.setVisible(false);
+    }
+    @FXML protected void deleteClient(ActionEvent event) throws IOException, SQLException {
 
+
+    }
     @FXML protected void addClient(ActionEvent event) throws IOException, SQLException {
         String filledEmail = email.getText();
         String filledFirstName = first_name.getText();
