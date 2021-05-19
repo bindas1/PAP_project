@@ -1,14 +1,69 @@
 package org.example;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Hashtable;
+import java.util.Locale;
+import java.util.Map;
+import java.util.TreeMap;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 
 public class MainPage {
-    @FXML AnchorPane statistics1;
+    @FXML BorderPane statistics1;
     @FXML AnchorPane statistics2;
     @FXML AnchorPane statistics3;
+
+    public void initialize() throws SQLException {
+        Database database = new Database();
+        ResultSet rs = database.selectJoinRecords();
+
+        Hashtable<java.sql.Date, Float> orders_values = new Hashtable<java.sql.Date, Float>();
+
+        while(rs.next()) {
+            java.sql.Date date = rs.getDate("order_date");
+            Float value = rs.getFloat("Value_of_order");
+            if(orders_values.containsKey(date)){
+                orders_values.put(date, orders_values.get(date) + value);
+            }
+            else {
+                orders_values.put(date, value);
+            }
+        }
+
+        TreeMap<java.sql.Date, Float> tmap = new TreeMap<java.sql.Date, Float>(orders_values);
+        System.out.println(tmap);
+
+        XYChart.Series statistics_1 = new XYChart.Series();
+        statistics_1.setName("Total value of orders in particular day");
+
+        for (Map.Entry<java.sql.Date, Float> entry : tmap.entrySet()) {
+            java.sql.Date date = entry.getKey();
+            Float value = entry.getValue();
+            XYChart.Data<String, Float> d = new XYChart.Data<>(date.toString(), value);
+            statistics_1.getData().add(d);
+        }
+
+        final CategoryAxis xAxis = new CategoryAxis();
+        final NumberAxis yAxis = new NumberAxis();
+        final BarChart<String, Number> bc =
+                new BarChart<>(xAxis,yAxis);
+        bc.setTitle("Profit of the shop in 2021");
+        xAxis.setLabel("Date");
+        yAxis.setLabel("Value of profit");
+
+        bc.getData().addAll(statistics_1);
+        statistics1.setCenter(bc);
+
+    }
 
     @FXML private void signOut() throws IOException { App.setRoot("primary"); }
 

@@ -90,20 +90,20 @@
          <center>
             <AnchorPane BorderPane.alignment="CENTER">
          <children>
-                  <AnchorPane fx:id="statistics1" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-                     <Label alignment="CENTER" text="Statistics 1" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-         <graphic>
-                  <LineChart prefHeight="150.0" prefWidth="230.0">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis side="LEFT" />
-                    </yAxis>
-                  </LineChart>
-               </graphic>
-                    </Label>
-               </AnchorPane>
+                  <BorderPane fx:id="statistics1" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+<!--                     <Label alignment="CENTER" text="Statistics 1" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">-->
+<!--                        <graphic>-->
+<!--                          <LineChart prefHeight="150.0" prefWidth="230.0">-->
+<!--                            <xAxis>-->
+<!--                              <CategoryAxis side="BOTTOM" />-->
+<!--                            </xAxis>-->
+<!--                            <yAxis>-->
+<!--                              <NumberAxis side="LEFT" />-->
+<!--                            </yAxis>-->
+<!--                          </LineChart>-->
+<!--                       </graphic>-->
+<!--                    </Label>-->
+               </BorderPane>
              <AnchorPane fx:id="statistics2" style="-fx-border-color: linear-gradient(#61a2b1, #2A5058);" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                  <Label alignment="CENTER" text="Statistics 2" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
              </AnchorPane>
