@@ -61,7 +61,7 @@ root {
     -fx-border-color: BLACK;
 }
 
-#saveButton{
+#saveButton, #changeStatusButton{
 -fx-background-color: linear-gradient(#62ff59, #46f73b);
 }
 #deleteButton{
@@ -71,7 +71,7 @@ root {
 #deleteButton:hover{
     -fx-background-color: linear-gradient(#ad0919, #ad1514);
 }
-#saveButton:hover{
+#saveButton:hover, #changeStatusButton:hover{
 -fx-background-color: linear-gradient(#46ed3e, #3ed636);
 }
 

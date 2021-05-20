@@ -18,9 +18,15 @@ import java.util.*;
 public class OrdersController {
     @FXML BorderPane ordersTable;
     @FXML AnchorPane addOrderWindow;
+    @FXML AnchorPane deleteOrderWindow;
+    @FXML AnchorPane changeOrderStatusWindow;
     @FXML AnchorPane ordersListWindow;
     @FXML private Button saveButton;
+    @FXML private Button deleteButton;
+    @FXML private Button changeStatusButton;
 
+    @FXML TextField idChange;
+    @FXML TextField idDelete;
     @FXML TextField order_id;
     @FXML TextField products_ids;
     @FXML TextField email_client;
@@ -44,9 +50,47 @@ public class OrdersController {
     }
     @FXML protected void closeWindow(ActionEvent event) throws IOException{
         addOrderWindow.setVisible(false);
+        deleteOrderWindow.setVisible(false);
+        changeOrderStatusWindow.setVisible(false);
         ordersListWindow.setVisible(true);
     }
+    @FXML protected void deleteOrderWindow(ActionEvent event) throws IOException{
+        deleteOrderWindow.setVisible(true);
+        ordersListWindow.setVisible(false);
+    }
+    @FXML protected void changeOrderStatusWindow(ActionEvent event) throws IOException{
+        changeOrderStatusWindow.setVisible(true);
+        ordersListWindow.setVisible(false);
+    }
+    @FXML protected void changeStatus(ActionEvent event) throws IOException, SQLException {
+        String filledChangeId = idChange.getText();
+        Window owner = changeStatusButton.getScene().getWindow();
+        if (filledChangeId.trim().isEmpty()) {
+            Helpers.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                    "Please enter order id");
+            return;
+        }
+        Database database = new Database();
+        //database.changeStatus("Orders", filledChangeId);
+        Helpers.showAlert(Alert.AlertType.CONFIRMATION, owner, "Request confirmation",
+                "/This function will be added soon/ You changed order "+filledChangeId);
 
+
+    }
+    @FXML protected void deleteOrder(ActionEvent event) throws IOException, SQLException {
+        String filledDeletedId = idDelete.getText();
+        Window owner = deleteButton.getScene().getWindow();
+
+        if (filledDeletedId.trim().isEmpty()) {
+            Helpers.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                    "Please enter order id");
+            return;
+        }
+        Database database = new Database();
+        database.deleteRecord("Orders", filledDeletedId);
+        Helpers.showAlert(Alert.AlertType.CONFIRMATION, owner, "Request confirmation",
+                "You deleted order "+filledDeletedId);
+    }
     @FXML protected void addOrder(ActionEvent event) throws IOException, SQLException {
         String filledProducts = products_ids.getText();
         String filledEmail = email_client.getText();

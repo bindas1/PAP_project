@@ -20,6 +20,7 @@ public class ClientsController {
     @FXML private Button saveButton;
     @FXML private Button deleteButton;
 
+    @FXML TextField emailDelete;
     @FXML TextField email;
     @FXML TextField first_name;
     @FXML TextField last_name;
@@ -51,9 +52,20 @@ public class ClientsController {
         clientsListWindow.setVisible(false);
     }
     @FXML protected void deleteClient(ActionEvent event) throws IOException, SQLException {
+        String filledDeletedEmail = emailDelete.getText();
+        Window owner = deleteButton.getScene().getWindow();
 
-
+        if (filledDeletedEmail.trim().isEmpty()) {
+            Helpers.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                    "Please enter client's email");
+            return;
+        }
+        Database database = new Database();
+        database.deleteRecord("Clients", filledDeletedEmail);
+        Helpers.showAlert(Alert.AlertType.CONFIRMATION, owner, "Request confirmation",
+                "You deleted "+filledDeletedEmail);
     }
+
     @FXML protected void addClient(ActionEvent event) throws IOException, SQLException {
         String filledEmail = email.getText();
         String filledFirstName = first_name.getText();

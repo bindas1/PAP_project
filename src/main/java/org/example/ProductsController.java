@@ -19,8 +19,11 @@ public class ProductsController {
     @FXML BorderPane productsTable;
     @FXML AnchorPane addProductWindow;
     @FXML AnchorPane productsListWindow;
+    @FXML AnchorPane deleteProductsWindow;
     @FXML private Button saveButton;
+    @FXML private Button deleteButton;
 
+    @FXML TextField idDelete;
     @FXML TextField product_name;
     @FXML TextField price;
     @FXML TextField ean;
@@ -41,7 +44,26 @@ public class ProductsController {
     }
     @FXML protected void closeWindow(ActionEvent event) throws IOException{
         addProductWindow.setVisible(false);
+        deleteProductsWindow.setVisible(false);
         productsListWindow.setVisible(true);
+    }
+    @FXML protected void deleteProductWindow(ActionEvent event) throws IOException{
+        deleteProductsWindow.setVisible(true);
+        productsListWindow.setVisible(false);
+    }
+    @FXML protected void deleteProduct(ActionEvent event) throws IOException, SQLException {
+        String filledDeletedId = idDelete.getText();
+        Window owner = deleteButton.getScene().getWindow();
+
+        if (filledDeletedId.trim().isEmpty()) {
+            Helpers.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                    "Please enter product id");
+            return;
+        }
+        Database database = new Database();
+        database.deleteRecord("Products", filledDeletedId);
+        Helpers.showAlert(Alert.AlertType.CONFIRMATION, owner, "Request confirmation",
+                "You deleted "+filledDeletedId);
     }
     @FXML protected void addProduct(ActionEvent event) throws IOException, SQLException {
         String filledProductName = product_name.getText();

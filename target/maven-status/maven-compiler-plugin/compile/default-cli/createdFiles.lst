@@ -7,6 +7,7 @@ org\example\PrimaryController.class
 org\example\Product.class
 org\example\DynamicTable$1.class
 org\example\ProductsController.class
+org\example\Database$2.class
 module-info.class
 org\example\Database$1.class
 org\example\App.class

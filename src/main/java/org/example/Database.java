@@ -14,6 +14,12 @@ public class Database {
         put("Products", "INSERT INTO Products(product_name, price, ean) VALUES (?, ?, ?)");
     }};
 
+    Hashtable<String, String> DELETE_QUERIES = new Hashtable<>() {{
+        put("Clients", "DELETE FROM Clients WHERE email=?");
+        put("Orders", "DELETE FROM Orders WHERE order_id=?");
+        put("Products", "DELETE FROM Products WHERE product_id=?");
+    }};
+
     private static final String JOIN_QUERY = "SELECT orders.order_date, orders.quantity * products.price AS Value_of_order FROM orders\n" +
             "INNER JOIN products on orders.product_id=products.product_id;";
 
@@ -81,10 +87,12 @@ public class Database {
                     .getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
 
             // Step 2:Create a statement using connection object
-            //PreparedStatement preparedStatement = connection.prepareStatement(INSERT_QUERIES.get(table));
+            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_QUERIES.get(table));
+            preparedStatement.setString(1, name);
 
-//TO DO usuwanie
-
+            System.out.println(preparedStatement);
+            // Step 3: Execute the query or update query
+            preparedStatement.executeUpdate();
         }
         catch (SQLException e){
             printSQLException(e);
