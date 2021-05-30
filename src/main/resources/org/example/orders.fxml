@@ -148,7 +148,7 @@
                         <children>
                            <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="150.0" text="Order Id:" />
                            <TextField fx:id="idChange" prefHeight="10.0" prefWidth="100.0" promptText="Order id*:" GridPane.columnIndex="1" />
-                           <ChoiceBox fx:id="newStatus" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" >
+                           <ChoiceBox fx:id="statusChange" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" >
                               <items>
                                  <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Shipped (True)" />

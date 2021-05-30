@@ -25,6 +25,8 @@ public class Database {
     private static final String JOIN_QUERY = "SELECT orders.order_date, orders.quantity * products.price AS Value_of_order FROM orders\n" +
             "INNER JOIN products on orders.product_id=products.product_id;";
 
+    private static final String CHANGE_STATUS_QUERY = "UPDATE Orders SET shipping_status = ? WHERE order_id = ?";
+
     public void insertRecord(String table, List<Object> arguments) throws SQLException {
         // Step 1: Establishing a Connection and
         // try-with-resource statement will auto close the connection.
@@ -123,6 +125,22 @@ public class Database {
             preparedStatement.executeUpdate();
         }
         catch (SQLException e){
+            printSQLException(e);
+        }
+    }
+    public void changeOrderStatus(String name, int statusChange) {
+        // Step 1: Establishing a Connection and
+        // try-with-resource statement will auto close the connection.
+        try {
+            Connection connection = DriverManager
+                    .getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
+
+            PreparedStatement preparedStatement = connection.prepareStatement(CHANGE_STATUS_QUERY);
+            preparedStatement.setInt(1, statusChange);
+            preparedStatement.setString(2, name);
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
             printSQLException(e);
         }
     }

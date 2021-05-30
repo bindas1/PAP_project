@@ -26,6 +26,7 @@ public class OrdersController {
     @FXML private Button changeStatusButton;
 
     @FXML TextField idChange;
+    @FXML ChoiceBox statusChange;
     @FXML TextField idDelete;
     @FXML TextField order_id;
     @FXML TextField products_ids;
@@ -65,17 +66,24 @@ public class OrdersController {
     @FXML protected void changeStatus(ActionEvent event) throws IOException, SQLException {
         String filledChangeId = idChange.getText();
         Window owner = changeStatusButton.getScene().getWindow();
+        int change = 0;
+        try {
+            Object status = statusChange.getSelectionModel().getSelectedItem();
+            if (status.equals("Shipped (True)")){
+                change = 1;
+            }
+        } catch (java.lang.NullPointerException exception) {
+            System.out.println("Setting default shipping status to 0 - not shipped");
+        }
         if (filledChangeId.trim().isEmpty()) {
             Helpers.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
                     "Please enter order id");
             return;
         }
         Database database = new Database();
-        //database.changeStatus("Orders", filledChangeId);
+        database.changeOrderStatus(filledChangeId, change);
         Helpers.showAlert(Alert.AlertType.CONFIRMATION, owner, "Request confirmation",
-                "/This function will be added soon/ You changed order "+filledChangeId);
-
-
+                "You changed order "+filledChangeId);
     }
     @FXML protected void deleteOrder(ActionEvent event) throws IOException, SQLException {
         String filledDeletedId = idDelete.getText();
