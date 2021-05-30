@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 public class ClientsController {
     @FXML BorderPane clientsTable;
@@ -135,7 +136,13 @@ public class ClientsController {
     }
 
     @FXML protected void Export(ActionEvent event) throws IOException {
-        System.out.println("Export");
+        File selectedDirectory = Helpers.chooseFileDestination();
+        if (selectedDirectory != null){
+            Database database = new Database();
+            List<String> dataArray = database.ExportRecords("Clients");
+            Helpers.printToCSV(dataArray, selectedDirectory);
+        }
+        System.out.println(selectedDirectory);
     }
 
 }

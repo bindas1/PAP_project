@@ -183,7 +183,13 @@ public class OrdersController {
     }
 
     @FXML protected void Export(ActionEvent event) throws IOException {
-        System.out.println("Export");
+        File selectedDirectory = Helpers.chooseFileDestination();
+        if (selectedDirectory != null){
+            Database database = new Database();
+            List<String> dataArray = database.ExportRecords("Orders");
+            Helpers.printToCSV(dataArray, selectedDirectory);
+        }
+        System.out.println(selectedDirectory);
     }
 
     @FXML protected void refreshWindows(ActionEvent event) throws IOException{

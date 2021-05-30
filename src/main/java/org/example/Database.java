@@ -1,5 +1,8 @@
 package org.example;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.sql.*;
 import java.util.*;
 
@@ -13,7 +16,6 @@ public class Database {
         put("Orders", "INSERT INTO Orders(order_id, product_id, email_client, quantity, order_date, shipping_status) VALUES (?, ?, ?, ?, ?, ?)");
         put("Products", "INSERT INTO Products(product_name, price, ean) VALUES (?, ?, ?)");
     }};
-
     Hashtable<String, String> DELETE_QUERIES = new Hashtable<>() {{
         put("Clients", "DELETE FROM Clients WHERE email=?");
         put("Orders", "DELETE FROM Orders WHERE order_id=?");
@@ -77,6 +79,32 @@ public class Database {
             printSQLException(e);
         }
         return null;
+    }
+
+    public List<String> ExportRecords(String table){
+        List<String> dataArray = new ArrayList<String>();
+        try {
+            Connection connection = DriverManager
+                    .getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
+            ResultSet rs = selectRecord(table);
+            //PreparedStatement preparedStatement = connection.prepareStatement(EXPORT_QUERIES.get(table));
+            for(int i=0 ; i<rs.getMetaData().getColumnCount(); i++) {
+                while (rs.next()) {
+                    //Iterate Row
+                    String row = "";
+                    for (int k = 1; k <= rs.getMetaData().getColumnCount(); k++) {
+                        //Iterate Column
+                        row = row.concat(rs.getString(k));
+                        row = row + ", ";
+                    }
+                    dataArray.add(row);
+                }
+            }
+        } catch (SQLException e) {
+            // print SQL exception information
+            printSQLException(e);
+        }
+        return dataArray;
     }
 
     public void deleteRecord(String table, String name) throws SQLException {
