@@ -1,2 +1,5 @@
-Paweł Jankowski - 300545
-Bartłomiej Binda - 300188
+Autorzy:
+Bartłomiej Binda
+Paweł Jankowski
+
+Aplikacja zsynchronizowana z bazami danych.
